@@ -63,5 +63,18 @@ class BasicFunctionKtTest {
         }
     }
 
+    @Test
+    fun tryTest() {
+        assert(1f == division(2, 2))
+
+        assert(0f == division(2, 0))
+    }
+
+    fun division(a: Int, b: Int): Float = try {
+        (a / b).toFloat()
+    } catch (e: Exception) {
+        0f
+    }
+
 
 }
