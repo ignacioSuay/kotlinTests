@@ -13,3 +13,5 @@ class PersonCustomGetter(name: String) {
         get() = field.toUpperCase() //note we are using field, this is what is called Backing field
 }
 
+data class DataPerson(val name: String)
+
