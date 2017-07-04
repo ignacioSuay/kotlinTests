@@ -15,3 +15,8 @@ class PersonCustomGetter(name: String) {
 
 data class DataPerson(val name: String)
 
+class Person {
+    var name: String = ""
+    var age: Int = 0
+}
+
