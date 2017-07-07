@@ -50,7 +50,6 @@ class LambdaTests {
 
     @Test
     fun testWith() {
-
         val p = with(Person()) {
             name = "suay"
             age = 31
@@ -64,7 +63,6 @@ class LambdaTests {
     @Test
     //Difference between with and apply is that apply always return the object which is applied
     fun testApply(){
-
         val p = Person().apply {
             name = "suay"
             age = 31
