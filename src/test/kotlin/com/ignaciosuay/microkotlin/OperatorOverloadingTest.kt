@@ -12,11 +12,10 @@ class OperatorOverloadingTest {
     }
 
     @Test
-    fun overloadTest() {
+    fun overloadPlusTest() {
         val p1 = Person("hola")
         val p2 = Person(" mundo")
         val p3 = p1 + p2
-
         assert(p3.name == "hola mundo")
 
         val p4 = Person(" suay")
