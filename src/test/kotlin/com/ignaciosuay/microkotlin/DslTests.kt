@@ -22,8 +22,7 @@ class DslTests {
 
     @Test
     fun testLambdaWithReceiverAndInputParams() {
-        val sum: Int.(other: Int) -> Int = { this + other }
-
-
+        val sum = fun Int.(other: Int): Int = this + other
+        assert (3 == 1.sum(2))
     }
 }
