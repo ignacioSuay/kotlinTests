@@ -42,6 +42,11 @@
         <td>No</td>
     </tr>
     <tr>
+        <td>Functions with default and named parameters</td>
+        <td>No</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
         <td>Extension functions</td>
         <td>No</td>
         <td>Yes</td>
@@ -92,5 +97,33 @@
         <td>Yes</td>
     </tr>
 </table>
+
+<h3>Things that are not in Kotlin that I don't miss</h3>
+<ul>
+    <li>Checked Exceptions: In my opinion checked exceptions are not useful, make the code more verbose, less readable (result in multiple throws clause declarations) and are not compatible with functional coding.</li>
+    <li>Primitive types: Kotlin has primitives (the same as Java) but they are not a special case, they are objects as all the other types.</li>
+    <li>Static members: Kotlin has replaced this with package-level (also called top-level) functions and companion objects. In most cases it is recommended to use package-level functions, which are functions declared outside of any class, so there is no need for extra level of nesting.</li>
+</ul>
+
+<h3>Things that are in Kotlin and I miss in Java</h3>
+<ul>
+    <li>Functions with default and named parameters: In Kotlin you could define a function with default parameters. This way you can the call a function and only specify the parameters which are different to the default ones</li>
+    [java]
+    fun defaultSum(p1: Int, p2: Int = 10, p3: Int = 0): Int {
+        return p1 + p2 + p3
+    }
+
+    assert(3 == defaultSum(1, 2))
+    assert(13 == defaultSum(3))
+
+    assert(15 == defaultSum(3, p3 = 2))
+
+    [/java]
+    <li>Extension functions: It’s a function that can be called as a member of a class but is defined outside of it. This feature makes it easier to integrate with existing code. For instance, in Kotlin you could add a new function to the Java String class and use it in your code.</li>
+    <li></li>
+
+</ul>
+
+
 </body>
 </html>
