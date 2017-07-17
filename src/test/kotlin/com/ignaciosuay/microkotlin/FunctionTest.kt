@@ -35,21 +35,21 @@ class FunctionTest {
     infix fun Any.suayalo(other: Any) = Pair(this, other)
 
     @Test
-    fun testInfix(){
+    fun testInfix() {
         val a = 1 suayalo 2
         assert(1 == a.first)
         assert(2 == a.second)
     }
 
     @Test
-    fun loopWithIndex(){
+    fun loopWithIndex() {
         val loop = listOf("a", "b", "c")
-        for((a,i) in loop.withIndex())
+        for ((a, i) in loop.withIndex())
             println("$a with index: $i")
     }
 
     @Test
-    fun testVarArgs(){
+    fun testVarArgs() {
         val array = arrayOf("a", "b", "c")
         val list2 = listOf("d", *array)
 
