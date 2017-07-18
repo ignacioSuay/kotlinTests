@@ -1,0 +1,107 @@
+Functions
+------------------1
+Functions easier to call:
+Named parameters and default parameters
+
+Top-level functions and properties: get rid of static utility classes
+
+Extend functions and properties, outside the class. Really useful for using java classes
+
+Infix calls: a way to create a new objects
+
+Creating loops withIndex
+
+Nested functions: you are able to create a method inside other method
+
+Use when instead of multiple if else or switch
+
+Use ranges with in and. .. And you can use them in loops for (I in 1..100)
+
+Loop over maps it is easier
+
+For ((name, address)  in personMap){}
+
+There isn't checked exceptions
+
+Can use try as an expression
+
+
+
+
+Clases
+-------—-------
+
+Kotlin can compare using == for objects instead of equals. If you want to compare by reference you can then use ===
+
+You can use data to autogenarate:
+toString
+Equals
+HashCode
+Copy
+And more (need to check)
+
+Example:
+Data class Client(val name:String)
+
+
+*classes are final by default. Basically are declarations are final and public by default
+
+Can implement de decorator pattern using the word 'by'. Need to investigate
+Example:
+Class DelegatingCollection<T>(innerList: Collection<T>=ArrayList<T>()) :Collection <T> by innerList
+
+Provides first class support for creating singletons. Just need to use the word object. Object defines and creates at the same time an object. For large system you should use depend y injection instead, because you cannot not mock them
+
+
+Kotlin doesn't have static
+It provides either package level functions or companion objects.
+
+Companion objects are object inside a class with access to private fields
+
+Lambda with receivers (with and apply)
+
+The difference between with and apply is that apply returns the same object that used with the lambda. Also the syntax is different
+
+With(StringBuilder()) {... }
+
+StringBuilder(). apply{...}
+
+Specially apply is very good to initialize objects.
+
+
+TYPE SYSTEM
+=============
+
+There are not arrays in kotlin
+
+Kotlin nullable values are explicit(you need to use?) and any possible NPE will fail at compilation time
+
+Kotlin doesn't distinguish between primitive types and reference types
+
+Any is the super class of both of them similar to Object
+
+Kotlin  doesn't convert numbers automatically
+
+Ex:
+Val i =1
+Val l:Long = i.toLong()
+
+In Kotlin  void is the Unit type
+
+Kotlin detects NPE at compilation time
+
+Provides safe calls ?., elvis operator?:, not-nulk assertions and let functions
+
+Can use lateinit to lazy initialize a variable. Especially useful when you have a not-null property that you want to ini later
+
+COLLECTIONS
+
+kotlin has 2 interfaces, one for just reading (collection) and a different one for modifications (mutable collection)
+
+OPERATORS
+
+Kotlin allows you to overload arithmetic operators: +, -, /, *, %
+
+And comparison operators ==,! =, >, <...
+
+You Can  also o reload the [] for an object, also the in, and rangeTo
