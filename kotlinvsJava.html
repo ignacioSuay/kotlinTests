@@ -112,17 +112,26 @@
 
 <h3>Things that are not in Kotlin that I don't miss</h3>
 <ul>
-    <li>Checked Exceptions: In my opinion checked exceptions are not useful, make the code more verbose, less readable (result in multiple throws clause declarations) and are not compatible with functional coding.</li>
-    <li>Primitive types: Kotlin has primitives (the same as Java) but they are not a special case, they are objects as all the other types.</li>
-    <li>Static members: Kotlin has replaced this with package-level (also called top-level) functions and companion objects. In most cases it is recommended to use package-level functions, which are functions declared outside of any class, so there is no need for extra level of nesting.</li>
+    <li>Checked Exceptions: In my opinion checked exceptions are not useful, make the code more verbose, less readable
+        (result in multiple throws clause declarations) and are not compatible with functional coding.
+    </li>
+    <li>Primitive types: Kotlin has primitives (the same as Java) but they are not a special case, they are objects as
+        all the other types.
+    </li>
+    <li>Static members: Kotlin has replaced this with package-level (also called top-level) functions and companion
+        objects. In most cases it is recommended to use package-level functions, which are functions declared outside of
+        any class, so there is no need for extra level of nesting.
+    </li>
 </ul>
 
 <h3>Things that are in Kotlin and I miss in Java</h3>
 <ul>
-    <li>Functions with default and named parameters: In Kotlin you could define a function with default parameters. This way you can the call a function and only specify the parameters which are different to the default ones</li>
+    <li>Functions with default and named parameters: In Kotlin you could define a function with default parameters. This
+        way you can the call a function and only specify the parameters which are different to the default ones
+    </li>
     [java]
     fun defaultSum(p1: Int, p2: Int = 10, p3: Int = 0): Int {
-        return p1 + p2 + p3
+    return p1 + p2 + p3
     }
 
     assert(3 == defaultSum(1, 2))
@@ -130,22 +139,38 @@
     assert(15 == defaultSum(3, p3 = 2))
 
     [/java]
-    <li>Extension functions: It’s a function that can be called as a member of a class but is defined outside of it. This feature makes it easier to integrate with existing code. For instance, in Kotlin you could add a new function to the Java String class and use it in your code.</li>
-    <li>Operator overloading: Similar to other languages Kotlin allows you to overload operators. For instance, you could define a special method plus to overload the + operator. </li>
+    <li>Extension functions: It’s a function that can be called as a member of a class but is defined outside of it.
+        This feature makes it easier to integrate with existing code. For instance, in Kotlin you could add a new
+        function to the Java String class and use it in your code.
+    </li>
+    <li>Operator overloading: Similar to other languages Kotlin allows you to overload operators. For instance, you
+        could define a special method plus to overload the + operator.
+    </li>
     <li>Null-safety: In Kotlin, the compiler will be in charge of checking any possible NullPointerException.</li>
-    <li>Smart casts: When you check if an object conforms to a given type, then the compiler already know the type of the object and there is no need to cast.Let's have a look to an example:
+    <li>Smart casts: When you check if an object conforms to a given type, then the compiler already know the type of
+        the object and there is no need to cast.Let's have a look to an example:
         [code]
         if (x !is String){
-            print(x.length) //there is no need to cast
+        print(x.length) //there is no need to cast
         }
         [/code]
     </li>
-    <li>Singletons: It is possible to build singletons with Java, but Kotlin provides first class support for creating singletons. Just need to use the word "object".</li>
-    <li>Range expressions: Kotlin makes it easier to define a range by providing the .. operator ( for (i in 1..4) ). Other keywords like downTo (for reversing the order), step and until could be very useful.</li>
-    <li>Data classes: If you mark a class a data, then the compiler automatically derives the following members from all properties declared in the primary constructor: toString, equals, hashCode and copy</li>
-    <li>String-handling functions: </li>
-    <li>Primary constructors: </li>
-    <li>Destructuring Declarations: </li>
+    <li>Singletons: It is possible to build singletons with Java, but Kotlin provides first class support for creating
+        singletons. Just need to use the word "object".
+    </li>
+    <li>Range expressions: Kotlin makes it easier to define a range by providing the .. operator ( for (i in 1..4) ).
+        Other keywords like downTo (for reversing the order), step and until could be very useful.
+    </li>
+    <li>Data classes: If you mark a class a data, then the compiler automatically derives the following members from all
+        properties declared in the primary constructor: toString, equals, hashCode and copy
+    </li>
+    <li>String-handling functions: Kotlin provides an extra number of functions and templates that makes it easier to
+        work with Strings
+    </li>
+    <li>Destructuring Declarations: This feature allows you to unpack a single composite value and use it to initialize
+        several separate variables.
+        For instance: you can destructure an object and assign it to 2 variables: val (x,y) = Point(10, 20)
+    </li>
 
 </ul>
 
@@ -158,23 +183,27 @@
     type of every expression is calculated at compile time. (performance, reliability, maintainability)
 
     Kotlin is not just object-oriented but also functional too.
-    In Kotlin most of the most popular features of functional languages are available (first-class functions, immutability, no side effects).
+    In Kotlin most of the most popular features of functional languages are available (first-class functions,
+    immutability, no side effects).
     A functional style provides conciseness, safe multithreading and easier testing.
-    After Java 8 you can use the functional style too but Kotlin provides the syntactic and library support required to use it effortlessly.
+    After Java 8 you can use the functional style too but Kotlin provides the syntactic and library support required to
+    use it effortlessly.
 
     The fact that Kotlin is full compatible with Java is also one of it biggest strength.
-    You could use it with you current Java libraries and at the same time any Java application could call your Kotlin libraries.
-    This gives you the flexibility in mixing Java and Kotlin anywhere in your project. Although I personally, wouldn't recommend mixing them unless it is completely necessary
+    You could use it with you current Java libraries and at the same time any Java application could call your Kotlin
+    libraries.
+    This gives you the flexibility in mixing Java and Kotlin anywhere in your project. Although I personally, wouldn't
+    recommend mixing them unless it is completely necessary
 
     One field where Java is clearly much better than Kotlin is in the amount of available resources.
     Java is more than 20 years old and the amount of books, articles, posts... available is innumerable.
-    When I try to find an answer for a Java question online I usually can find the solution very quickly while in Kotlin could take me a bit longer.
+    When I try to find an answer for a Java question online I usually can find the solution very quickly while in Kotlin
+    could take me a bit longer.
     Although Kotlin is growing very fast, still has a long path until it reaches the same community as Java has.
 
     In conclusion,
 
 </p>
-
 
 
 </body>
