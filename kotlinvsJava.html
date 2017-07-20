@@ -111,12 +111,19 @@
 </table>
 
 <h3>Things that are not in Kotlin that I don't miss</h3>
+
+Everything that you can do with Java you can do it with Kotlin too.
+However, some of the features that you can still find in Java are there just because Java it is backward compatible.
+That means that you can still run a program in coded in Java 1 with Java 8, but also means that for instance you cannot remove the ";"
+from the language and make it more flexible.
+
+Here a few examples of things that you cannot find in Kotlin and I don't miss:
 <ul>
     <li>Checked Exceptions: In my opinion checked exceptions are not useful, make the code more verbose, less readable
         (result in multiple throws clause declarations) and are not compatible with functional coding.
     </li>
-    <li>Primitive types: Kotlin has primitives (the same as Java) but they are not a special case, they are objects as
-        all the other types.
+    <li>Primitive types: Kotlin has primitives too (the same as Java) but they are not a special case. In Kotlin,
+        everything is an object, including basic types.
     </li>
     <li>Static members: Kotlin has replaced this with package-level (also called top-level) functions and companion
         objects. In most cases it is recommended to use package-level functions, which are functions declared outside of
@@ -124,10 +131,10 @@
     </li>
 </ul>
 
-<h3>Things that are in Kotlin and I miss in Java</h3>
+<h3>Features that are in Kotlin and I miss in Java</h3>
 <ul>
     <li>Functions with default and named parameters: In Kotlin you could define a function with default parameters. This
-        way you can the call a function and only specify the parameters which are different to the default ones
+        way you can call a function and only specify the parameters which are different to the default ones:
     </li>
     [java]
     fun defaultSum(p1: Int, p2: Int = 10, p3: Int = 0): Int {
@@ -148,28 +155,29 @@
     </li>
     <li>Null-safety: In Kotlin, the compiler will be in charge of checking any possible NullPointerException.</li>
     <li>Smart casts: When you check if an object conforms to a given type, then the compiler already know the type of
-        the object and there is no need to cast.Let's have a look to an example:
+        the object. Therefore you don't need to cast it. Let's have a look to an example:
+    </li>
         [code]
         if (x !is String){
-        print(x.length) //there is no need to cast
+            print(x.length) //there is no need to cast it
         }
         [/code]
-    </li>
+
     <li>Singletons: It is possible to build singletons with Java, but Kotlin provides first class support for creating
-        singletons. Just need to use the word "object".
+        singletons. You just need to use the word "object".
     </li>
-    <li>Range expressions: Kotlin makes it easier to define a range by providing the .. operator ( for (i in 1..4) ).
-        Other keywords like downTo (for reversing the order), step and until could be very useful.
+    <li>Range expressions: Kotlin makes it easier to define a range by using the .. operator (ex: for (i in 1..4) ).
+        Other keywords like downTo (for reversing the order), step and until could also be very useful.
     </li>
-    <li>Data classes: If you mark a class a data, then the compiler automatically derives the following members from all
-        properties declared in the primary constructor: toString, equals, hashCode and copy
+    <li>Data classes: If you mark a class as "data", then the compiler automatically generates the following methods from all
+        properties declared in the primary constructor: toString, equals, hashCode and copy.
     </li>
     <li>String-handling functions: Kotlin provides an extra number of functions and templates that makes it easier to
-        work with Strings
+        work with Strings.
     </li>
     <li>Destructuring Declarations: This feature allows you to unpack a single composite value and use it to initialize
         several separate variables.
-        For instance: you can destructure an object and assign it to 2 variables: val (x,y) = Point(10, 20)
+        For instance: you can destruct an object and assign it to 2 variables: val (x,y) = Point(10, 20)
     </li>
 
 </ul>
@@ -179,31 +187,27 @@
     it really makes a difference. Kotlin removes a lot of the boilerplate code that you have in Java and let
     you spend more time in the interesting parts of the code and less on routine matters.
 
-    Kotlin provides a nice syntactic sugar similar to Groovy, but the fact that it is a statically typed language and the
-    type of every expression is calculated at compile time. (performance, reliability, maintainability)
-
     Kotlin is not just object-oriented but also functional too.
-    Most of the most popular features of functional languages are available in Kotlin like first-class functions,
-    immutability and no side effects. A functional style provides conciseness, safe multithreading and easier testing.
+    A functional style provides conciseness, safe multithreading and easier testing.
+    Most of the most popular features of functional languages are available in Kotlin like first-class functions and
+    immutability.
     Since Java 8 you can use the functional style too in Java but Kotlin provides the syntactic and library support required to
     use it effortlessly.
 
     The fact that Kotlin is full compatible with Java is also one of its biggest strength.
-    You could use it with you current Java libraries and at the same time any Java application could call your Kotlin
-    libraries.
-    This gives you the flexibility in mixing Java and Kotlin anywhere in your project. I personally, wouldn't
-    recommend mixing them, but in an existing Java project you could use it for testing.
+    Existing Java code can be called from Kotlin in a natural way, and Kotlin code can be used from Java.
+    This gives you the flexibility of mixing Java and Kotlin anywhere in your project. I personally, wouldn't
+    recommend mixing them, at least not in production. However, you could introduce it for testing.
     Currently, there are very good frameworks which offer a more expressive DSL for writing tests in Kotlin like KotlinTest and Spek.
 
     One field where Java is clearly much better than Kotlin is in the amount of available resources.
     Java is more than 20 years old and the amount of books, articles, posts... available is innumerable.
     When I try to find an answer for a Java question online I usually can find the solution very quickly while in Kotlin
-    could take me a bit longer.
-    Although Kotlin is growing very fast, still has a long path until it reaches the same community as Java has.
+    could take me a bit longer. Although Kotlin is growing very fast, still has a long path until it reaches the same community as Java has.
 
-    In conclusion, Kotlin is a great language with lots of fantastic features that makes coding much pleasant and improves the quality of the code.
+    In conclusion, Kotlin is a great language with lots of fantastic features that makes coding much pleasant and improves the quality and readability  of the code.
     Saying that my personal recommendation is that if you already working on a Java project I wouldn't recommend to mix languages.
-    On the other hand, if you are planning to start a new project or a new microservice then I will definetly recomment to use Kotlin.
+    On the other hand, if you are planning to start a new project or a new microservice then I will definitely recommend to use Kotlin.
 
 </p>
 
